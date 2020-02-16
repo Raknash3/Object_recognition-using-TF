@@ -14,8 +14,8 @@ img_test= img_test/255.0
 model=keras.Sequential([
         keras.layers.Flatten(input_shape=(28,28)), #flatten layer
         keras.layers.Dense(256, activation='relu'),
-        keras.layers.Dense(128, activation='relu'),
-        keras.layers.Dense(64, activation='relu'),# three hidden layer with 128 nodes and relu as activation function
+        keras.layers.Dense(128, activation='relu'),# three hidden layer with 256,128 and 64 nodes and relu as activation function
+        keras.layers.Dense(64, activation='relu'),
         keras.layers.Dense(10,activation='softmax')# final layer with ten nodes coressponding to the labels
         ])
 #specify optimiser, loss function and metric to track
@@ -29,8 +29,7 @@ test_loss,test_acc= model.evaluate(img_test,label_test)
 print(test_acc)
 #make predictions
 p=model.predict(img_test)
-
-
+##
 #np.argmax(p[0])
 ##### To display a data####################################
 #def display_img(s):
