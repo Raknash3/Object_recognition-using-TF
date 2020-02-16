@@ -14,7 +14,8 @@ img_test= img_test/255.0
 model=keras.Sequential([
         keras.layers.Flatten(input_shape=(28,28)), #flatten layer
         keras.layers.Dense(256, activation='relu'),
-        keras.layers.Dense(128, activation='relu'),# three hidden layer with 128 nodes and relu as activation function
+        keras.layers.Dense(128, activation='relu'),
+        keras.layers.Dense(64, activation='relu'),# three hidden layer with 128 nodes and relu as activation function
         keras.layers.Dense(10,activation='softmax')# final layer with ten nodes coressponding to the labels
         ])
 #specify optimiser, loss function and metric to track
